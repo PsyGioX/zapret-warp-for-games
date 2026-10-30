@@ -60,7 +60,6 @@ Steam · Epic · Battle.net · EA App · Ubisoft Connect · Riot · любые �
 | `3 - STOP WARP and zapret.bat` | Аварийная остановка, если окно запуска закрыли крестиком |
 | `4 - CHECK ping and packet loss.bat` | Пинг, джиттер и потери до любого хоста (например, сервера игры) |
 | `5 - FULL UNINSTALL zapret-warp.bat` | Полное удаление: службы, драйвер, реестр, следы; по желанию WARP и папка |
-| `6 - TWITCH above 720p.bat` | 🆕 Включает/выключает перенаправление Twitch через ваш прокси |
 | `service.bat` | Меню Flowseal: диагностика, тесты, смена фейков, Game Filter |
 
 ## 📈 Что нового по сравнению с прежней сборкой
