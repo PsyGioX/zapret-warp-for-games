@@ -159,7 +159,7 @@ Steam · Epic · Battle.net · EA App · Ubisoft Connect · Riot · любые �
 | [bol-van](https://github.com/bol-van/zapret) | zapret / winws |
 | [basil00](https://github.com/basil00/WinDivert) | WinDivert |
 
-Условия распространения — в [`LICENSE.txt`](LICENSE) (MIT; WinDivert — LGPLv3 / GPLv2).
+Условия распространения — в [`LICENSE`](LICENSE) (MIT; WinDivert — LGPLv3 / GPLv2).
 
 <div align="center">
 
