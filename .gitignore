@@ -1,0 +1,18 @@
+# Local test output
+utils/test results/
+/release/
+
+# Per-user runtime state (written by the launcher)
+utils/game_filter.enabled
+utils/warp_launcher.cfg
+
+# Packet captures and diagnostic dumps
+*.pcap
+*.pcapng
+*.dmp
+*.dump
+*.log
+
+# Local tool metadata
+.agents/
+.sentry-native/

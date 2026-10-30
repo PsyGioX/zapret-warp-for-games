@@ -1,0 +1,39 @@
+GAMES + CLOUDFLARE WARP  (zapret-warp, base: Flowseal 1.10.4)
+=============================================================
+
+RU
+--
+1. Распакуйте архив в простой локальный путь (например C:\zapret-warp). Не запускайте из ZIP.
+2. "1 - INSTALL Cloudflare WARP.bat": установите клиент, выберите "Приватный просмотр",
+   WARP не включайте.
+3. "2 - START Games via WARP.bat" (от администратора): выберите профиль general и режим
+   захвата (1 = низкая задержка, рекомендуется; 2 = совместимость; 3 = свои порты).
+4. Дождитесь Connected, затем сами запустите игру или лаунчер (Steam, Epic, Battle.net,
+   EA, Ubisoft, Riot и др.). Не закрывайте чёрное окно.
+5. После игры нажмите Enter в чёрном окне - всё будет остановлено.
+Окно закрыто крестиком -> запустите "3 - STOP WARP and zapret.bat" от администратора.
+Полное удаление и очистка системы: "5 - FULL UNINSTALL zapret-warp.bat" (от администратора).
+Замер пинга и потерь: "4 - CHECK ping and packet loss.bat" (укажите IP сервера игры).
+
+Режим 1 перехватывает только порты WARP (UDP 443 + запасные 500,1701,4443,4500,8095,8443),
+поэтому остальной трафик ПК не проходит через winws. Нулевые потери пакетов не
+гарантируются: результат зависит от маршрута и провайдера - подбирайте профиль замером.
+Сборка автономна: ничего не скачивается, кроме установщика Cloudflare WARP.
+
+EN
+--
+1. Extract to a simple local path (e.g. C:\zapret-warp). Do not run from inside the ZIP.
+2. Run "1 - INSTALL Cloudflare WARP.bat", install the client, pick Private browsing,
+   keep WARP disconnected.
+3. Run "2 - START Games via WARP.bat" as administrator; choose a general profile and a
+   capture mode (1 = low latency, recommended; 2 = compatibility; 3 = custom ports).
+4. Wait for Connected, then start your game or launcher yourself. Keep the window open.
+5. When finished press Enter in the window; everything is stopped and cleaned up.
+Window closed by accident -> run "3 - STOP WARP and zapret.bat" as administrator.
+Full removal and system cleanup: "5 - FULL UNINSTALL zapret-warp.bat" (as administrator).
+Measure ping/loss with "4 - CHECK ping and packet loss.bat" (use your game server IP).
+
+Mode 1 captures only WARP ports (UDP 443 plus fallbacks 500,1701,4443,4500,8095,8443),
+so the rest of the PC traffic does not pass through winws. Zero packet loss cannot be
+guaranteed: it depends on routing and your ISP - pick a profile by measuring.
+This build is offline: nothing is downloaded except the official Cloudflare WARP installer.
