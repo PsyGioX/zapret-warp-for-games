@@ -27,7 +27,7 @@ Steam · Epic · Battle.net · EA App · Ubisoft Connect · Riot · любые �
 **Cloudflare WARP (MASQUE)**, а WARP пускает через себя трафик любой игры и любого лаунчера.
 
 Основа — [Flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube)
-**1.10.4** (профили, фейки, списки). Адаптацию под WARP начал **JojiConnors**; эту сборку
+**1.10.4** (профили, фейки, списки). Адаптацию под WARP; эту сборку
 развивает и сопровождает **[PsyGioX](https://github.com/PsyGioX)** —
 [PsyGioX/zapret-warp-for-games](https://github.com/PsyGioX/zapret-warp-for-games).
 
@@ -261,7 +261,6 @@ nginx -t && nginx -s reload
 | Кто | Вклад |
 | --- | --- |
 | **[PsyGioX](https://github.com/PsyGioX)** | автор и сопровождающий этой сборки — [zapret-warp-for-games](https://github.com/PsyGioX/zapret-warp-for-games) |
-| **JojiConnors** | исходная адаптация под Cloudflare WARP |
 | [Flowseal](https://github.com/Flowseal/zapret-discord-youtube) | zapret-discord-youtube: профили, фейки, списки |
 | [bol-van](https://github.com/bol-van/zapret) | zapret / winws |
 | [basil00](https://github.com/basil00/WinDivert) | WinDivert |
