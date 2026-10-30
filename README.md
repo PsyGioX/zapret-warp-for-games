@@ -31,7 +31,7 @@ Steam · Epic · Battle.net · EA App · Ubisoft Connect · Riot · любые �
 [PsyGioX/zapret-warp-for-games](https://github.com/PsyGioX/zapret-warp-for-games).
 
 > [!NOTE]
-> Неофициальный пользовательский проект, не связан с Cloudflare, Valve, Twitch, издателями игр
+> Неофициальный пользовательский проект, не связан с Cloudflare, Valve, издателями игр
 > и т. д. Работоспособность зависит от провайдера и региона. Код проверить на живой Windows
 > автор правок не мог — при проблемах смотрите раздел [«Если не работает»](#-если-не-работает).
 
