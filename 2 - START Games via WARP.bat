@@ -40,20 +40,25 @@ if not errorlevel 1 (
 rem ---------- remembered choices ----------
 set "lastProfile="
 set "lastMode=1"
+set "lastCap=1"
 set "lastTcp="
 set "lastUdp="
 if exist "%CFG%" (
     for /f "usebackq tokens=1,* delims==" %%A in ("%CFG%") do (
         if /i "%%A"=="profile" set "lastProfile=%%B"
         if /i "%%A"=="mode" set "lastMode=%%B"
+        if /i "%%A"=="cap" set "lastCap=%%B"
         if /i "%%A"=="tcp" set "lastTcp=%%B"
         if /i "%%A"=="udp" set "lastUdp=%%B"
     )
 )
 
+set "LEAN=general (WARP LEAN).bat"
+if not defined lastProfile if exist "%~dp0%LEAN%" set "lastProfile=%LEAN%"
+
 rem ---------- profile selection ----------
 echo:
-echo Select a zapret profile:
+echo Select a zapret profile ^(WARP LEAN = least overhead, recommended^):
 set "profileCount=0"
 set "lastIdx="
 for %%F in ("%~dp0general*.bat") do if exist "%%~fF" (
@@ -89,6 +94,35 @@ if !profileChoice! GTR !profileCount! goto invalid_profile
 
 set "selectedProfile=!profile%profileChoice%!"
 
+set "isLean=0"
+set "capChoice=!lastCap!"
+set "gfMode=udp"
+set "gfTcp=%ALL_PORTS%"
+set "gfUdp=%WARP_UDP_PORTS%"
+if /i "!selectedProfile!"=="!LEAN!" (
+    set "isLean=1"
+    set "modeChoice=!lastMode!"
+    echo:
+    echo WARP LEAN: only QUIC handshake packets to Cloudflare are diverted, capture mode is not used.
+    goto save_choices
+)
+
+rem ---------- capture engine: LEAN or classic ----------
+echo:
+echo Select capture engine for this profile:
+echo   1. LEAN    - only the QUIC handshake to Cloudflare WARP goes through winws ^(recommended, least overhead^)
+echo   2. Classic - port-based capture, choose the mode below
+set "capChoice="
+set /p "capChoice=Capture [Enter = !lastCap!]: "
+if not defined capChoice set "capChoice=!lastCap!"
+if not "!capChoice!"=="2" set "capChoice=1"
+if "!capChoice!"=="1" if exist "%~dp0lean\!selectedProfile!" (
+    set "isLean=1"
+    set "modeChoice=!lastMode!"
+    echo LEAN variant: same UDP rules as "!selectedProfile!", TCP rules are not needed.
+    goto save_choices
+)
+
 rem ---------- capture mode selection ----------
 echo:
 echo Select capture mode (which ports zapret/WinDivert intercepts):
@@ -99,10 +133,6 @@ echo:
 set "modeChoice="
 set /p "modeChoice=Mode [Enter = !lastMode!]: "
 if not defined modeChoice set "modeChoice=!lastMode!"
-
-set "gfMode=udp"
-set "gfTcp=%ALL_PORTS%"
-set "gfUdp=%WARP_UDP_PORTS%"
 
 if "!modeChoice!"=="2" (
     set "gfMode=all"
@@ -134,6 +164,7 @@ if "!modeChoice!"=="2" (
     set "modeChoice=1"
 )
 
+:save_choices
 rem ---------- save choices ----------
 if not "!modeChoice!"=="3" (
     set "cTcp=!lastTcp!"
@@ -142,12 +173,13 @@ if not "!modeChoice!"=="3" (
 (
     echo profile=!selectedProfile!
     echo mode=!modeChoice!
+    echo cap=!capChoice!
     echo tcp=!cTcp!
     echo udp=!cUdp!
 )>"%CFG%"
 
 set "compatTried=0"
-if "!modeChoice!"=="2" set "compatTried=1"
+if "!isLean!"=="0" if "!modeChoice!"=="2" set "compatTried=1"
 
 :launch
 (
@@ -157,8 +189,15 @@ if "!modeChoice!"=="2" set "compatTried=1"
 )>"%GFFILE%"
 
 echo:
-echo Starting "!selectedProfile!" - capture mode: !gfMode! ^(TCP !gfTcp! / UDP !gfUdp!^)
-call "%~dp0!selectedProfile!"
+if "!isLean!"=="1" (
+    echo Starting "!selectedProfile!" - LEAN capture ^(QUIC handshake only^)
+) else (
+    echo Starting "!selectedProfile!" - capture mode: !gfMode! ^(TCP !gfTcp! / UDP !gfUdp!^)
+)
+set "profilePath=%~dp0!selectedProfile!"
+if "!isLean!"=="1" set "profilePath=%~dp0lean\!selectedProfile!"
+if /i "!selectedProfile!"=="!LEAN!" set "profilePath=%~dp0!selectedProfile!"
+call "!profilePath!"
 timeout /t 3 /nobreak > nul
 
 tasklist /FI "IMAGENAME eq winws.exe" | find /I "winws.exe" > nul
@@ -198,6 +237,8 @@ if "!compatTried!"=="0" (
     if errorlevel 3 goto cleanup
     if errorlevel 2 goto running
     set "compatTried=1"
+    if /i "!selectedProfile!"=="!LEAN!" set "selectedProfile=general.bat"
+    set "isLean=0"
     set "gfMode=all"
     set "gfTcp=%ALL_PORTS%"
     set "gfUdp=%ALL_PORTS%"
@@ -212,7 +253,7 @@ if errorlevel 2 goto cleanup
 echo:
 if "!connected!"=="1" if exist "%ROOT%utils\warp-quality.ps1" (
     echo Quick link quality check through the tunnel...
-    powershell -NoProfile -ExecutionPolicy Bypass -File "%ROOT%utils\warp-quality.ps1" -Target 1.1.1.1 -Count 10
+    powershell -NoProfile -ExecutionPolicy Bypass -File "%ROOT%utils\warp-quality.ps1" -Target 1.1.1.1 -Count 20
     echo:
     echo For your game server use "4 - CHECK ping and packet loss.bat".
 )

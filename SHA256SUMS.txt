@@ -1,12 +1,12 @@
 1b328ed5a43984af894bd6e978e26be812228487502b7495fec9fcc567604de3  ./.gitignore
 971c1fdb434445dfcc78addfa6234f1250616f8910e84244bad65e2c8cfccd91  ./1 - INSTALL Cloudflare WARP.bat
-343ec5e15ec8a2c99c3c5807619b4d648176bdcf5a0937616d45888056f892b3  ./2 - START Games via WARP.bat
+30ca9ceb781d6179c56d5ea3717b794903d83f2497ebe51a2d686eca30c1e921  ./2 - START Games via WARP.bat
 094ea6f3dc33d005598efe6aeefbeeef5f0b2ed149a464a6e325e8dad53c826a  ./3 - STOP WARP and zapret.bat
 e5cf8d297f24374931e7c0a63b275a752ac1b0bebf4bb81cbb5eeadd48862c05  ./4 - CHECK ping and packet loss.bat
 44625b017a3add9a0084b36483f24761faf06acf9c193e39568dac76af486dd2  ./5 - FULL UNINSTALL zapret-warp.bat
-bfdf45bfc13d9dd01ff2a86ee2687295d801a924502637687d94bd2e3d6e8978  ./LICENSE.txt
-c425f976222ffe0df0139dce4c736482b8e6534a4cf8a36faa2774f1a7d8daf5  ./README - Games WARP.txt
-ed506e5209387fb86a51245dd4eb7d66a1d7572a09f98cd53d43473074caaed0  ./README.md
+8ea76af265366af6ef96595705ad21cafab82f2786203ae70d29a970260434dc  ./LICENSE
+f6c13e878dfe5d8288ce9d65c19f71f52c07a6ac1bda8acc403379157c784b84  ./README - Games WARP
+11339d4090441d04db529609c5628e88c6293657640a19a76f9858b9305f0f27  ./README.md
 2fe18b3bd20807d36704d0b072092ee49ae84edca907a4420ab9a0f0f28fddcf  ./bin/ACTIVE_DISCORD_UDP.bin
 e065870cb0d13152e6132807bbf42218a9e7cd8d96f5602b61674cc540f3a56e  ./bin/ACTIVE_GAME_UDP.bin
 c1e060ee19444a259b2162f8af0f3fe8c4428a1c6f694dce20de194ac8d7d9a2  ./bin/WinDivert.dll
@@ -55,7 +55,30 @@ b181d1db261ba06d5b54baff123d491c6900174bbc22a2a237f9135160b7a948  ./general (FAK
 8bffa109e32aabb0360b2dc6be055687a884945fd62fcbe8fa73bdb4f3910df5  ./general (SIMPLE FAKE ALT).bat
 16d3f5350f24ce87cd3ec43e0639b76cbd71a53766672939df09cb9d50449fb1  ./general (SIMPLE FAKE ALT2).bat
 f6371c618951df2989db86e717beb4a8440ad9a405a592a85d2c7bffaeac0bb3  ./general (SIMPLE FAKE).bat
+b603b8535489a6370fc8554b73795d61c28e17658bb471f02c52d831495bb676  ./general (WARP LEAN).bat
 2c0723be1d3539a70392607b9cf2ef590efcceec8e6139b1a0d2984ea1da1947  ./general.bat
+868d892b1f14db86db98407db8250a108dab9a414e8d85b9b3d1e2e6670626f1  ./lean/general (ALT).bat
+9e1625a6f9bafbabb6a2fe5043f8287c262d3bab87a984f930d23eb52817412f  ./lean/general (ALT10).bat
+f2c027458fe8d0dc1f9cf6e8fcb96c28ac2a5e2b4cd578bd10cc69b86359fa3b  ./lean/general (ALT11).bat
+6b17e109fac8d2c6e18bb7e0c9c60c3dd67ba9a6a25b8fd3c56d5024442290cc  ./lean/general (ALT12).bat
+26c6c48075bfe0bb879923170f9b40e5a044b62f741acedf493bcf92a1c898c9  ./lean/general (ALT13).bat
+d897c60889c4a4975b37da8d64dc33af0dea28c91fee688af380f6917faa6df6  ./lean/general (ALT2).bat
+1fe5469295ef4026ac9a5b2fc503d7d5d374176479acad6a54caf631fda1e534  ./lean/general (ALT3).bat
+3364f58816d28a7b9ed475085032087adbce8fa78b9bd3e616ad5e928c411293  ./lean/general (ALT4).bat
+2b6ef181d47074b9a5a980f8442fcc21086ba4be23ddbb7b8199f19f36701684  ./lean/general (ALT5).bat
+fc2ade948d8c81e35106db418fb1d7cccc4a01a9a4f0783f82b00e825ea912b5  ./lean/general (ALT6).bat
+26e019cdf7971aad6ce7980a09555e0835b9e7eea24fd8266d94112fd830367a  ./lean/general (ALT7).bat
+7ad75902c6a7d940eb226d3f798be785fab5a32dbaf2281a45f93f81c7ff165f  ./lean/general (ALT8).bat
+f8bafa59029dca0bec91aca5e4ccfcf38919ad28c64d7549994e474d1e25e47f  ./lean/general (ALT9).bat
+5b19759c439ef34ef390bc0173768fe13cec08595b67e4a08a4af720cb041454  ./lean/general (EXP).bat
+635c2b432771eb7c54b9c2eebd1e3cbbbe738bffd5a69f43aa3c35a6d0fd8db2  ./lean/general (FAKE TLS AUTO ALT).bat
+92c17bfd37a9d70bc988eb567d2240ed1678a891bd7b4e7e11a968b3fe580816  ./lean/general (FAKE TLS AUTO ALT2).bat
+955f1f2d228e1374ad794b20aad399c702ba08eff494172c93a9513d209f1053  ./lean/general (FAKE TLS AUTO ALT3).bat
+71f08e60e52340773f28cd7eaa8ce080247ed26cb11c3443def39cd266c6de6f  ./lean/general (FAKE TLS AUTO).bat
+136d1d1d5435317895e121bb26a1b95b3fd851939a1dd8929b118ef2ef32f875  ./lean/general (SIMPLE FAKE ALT).bat
+9928a1666630146a5d56950741a79c6a24a459f82b11ae0cf731a7f9e4a42a4f  ./lean/general (SIMPLE FAKE ALT2).bat
+e3564b20f7aaf5236cec36783319f03282a0e8647a84a5aa94dbf8a3ee82001b  ./lean/general (SIMPLE FAKE).bat
+979a784adf83f450a68d1cc7f93be65ed0a330755ed9e31f242438f3d51b0025  ./lean/general.bat
 c39bf4e1b151c7d0d42fe7dae4c09e01ac26806a1ff4060ae456c7fb22087651  ./lists/ipset-all.txt
 19123a22bf1108815c07bda3cda8df282b30bd63e4939949928969c0fd195873  ./lists/ipset-exclude-user.txt
 96c03954012765ce4ab03b9c30f29ab1ca1b698c6752224d03828e6d182eb0fc  ./lists/ipset-exclude.txt
@@ -68,4 +91,4 @@ e2de8403e1d2bd8ebd9de6b2cbfaab488d710681cbdcde2b219e71bc4490a56d  ./lists/list-e
 d32590bd40fa4ddf30a474db4fdac1b9b8ab992ff45d8929347c0cbe5e9870ed  ./utils/cleanup-helper.ps1
 c27af6e8ba0a91e772b5b4a8da5f4cde6903b6eb6ab3a5a02b13afe7695d0f31  ./utils/targets.txt
 241d96e5b23d85236179741c14051ab0b8a6297842ede6b8a1bb6f4d4591b655  ./utils/test zapret.ps1
-ea7d7d161ce493141e64da14aa408c544e6bd1cc538a66e07d40e93db8cc84c9  ./utils/warp-quality.ps1
+ca3e6001ffb22be63a515a2ab154dac7f841700fdeff73987e671a3902d9b781  ./utils/warp-quality.ps1
